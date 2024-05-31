@@ -1,3 +1,18 @@
+### 1.目录结构
+```
+    ├─grpc  （gRPC代码）
+    │      service.go
+    │      
+    ├─hertz （hertz代码）
+    │      hertz.go
+    │      
+    ├─pb    （protobuf文件）
+    │      service.pb.go
+    │      service.proto
+    │      service_grpc.pb.go
+    │  README.md
+```
+
 ### 1.启动gRPC
 
 ``` 
