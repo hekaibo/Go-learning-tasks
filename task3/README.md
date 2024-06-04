@@ -5,11 +5,13 @@
     │      
     ├─model （表结构文件）
     │      user.go
-    │  main.go  （测试文件）
+    │  
+    |  .env
+    |  main.go  （测试文件）
     │  README.md
 ```
 
-### 2.修改根目录下.env文件的环境变量
+### 2.修改目录下.env文件的环境变量
 ![task3_resultimg1.png](..%2Fimg%2Ftask3_resultimg1.png)
 
 ### 3.运行main.go文件，得出结果
