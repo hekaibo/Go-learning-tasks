@@ -49,11 +49,11 @@
 ### 接口
 ``` 
     对外提供5个接口
-    createuser/username/email       新增用户接口
-    getuserbyname/username          根据姓名查询用户信息
-    getalluser                      查询所有用户信息
-    updateuserbyname/username/email 更新用户邮箱
-    deleteuserbyname/username       根据用户名删除用户
+    (Get)createuser/username/email       新增用户接口
+    (Get)getuserbyname/username          根据姓名查询用户信息
+    (Get)getalluser                      查询所有用户信息
+    (Get)updateuserbyname/username/email 更新用户邮箱
+    (Get)deleteuserbyname/username       根据用户名删除用户
 ```
 ### 4.1新增用户
 #### 访问 http://localhost:8888/createuser/zhangsan/zhangsan@email.com
