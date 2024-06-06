@@ -10,8 +10,6 @@ import (
 // customizeRegister registers customize routers.
 func customizedRegister(r *server.Hertz) {
 
-	// your code ...
-
 	// http://localhost:8888/createuser/zhangsan/zhangsan@email.com
 	// http://localhost:8888/createuser/lisi/lisi@email.com
 	// http://localhost:8888/updateuserbyname/zhangsan/zs@email.com

@@ -83,19 +83,6 @@ func (s *noticeserver) UpdateNotice(ctx context.Context, in *pb.NoticeRequest) (
 	content := in.GetContent()
 	pubuser := in.GetPubuser()
 
-	//updateNotice :=model.Notice{
-	//	Title:       title,
-	//	Content:     content,
-	//	PublishUser: pubuser,
-	//}
-
-	//updateNoticeMap := map[string]interface{}{
-	//	"title":        title,
-	//	"content":      content,
-	//	"publish_user": pubuser,
-	//}
-
-	//err := dbop.UpdateNotice(dao.DB, updateNoticeMap, id)
 	err := dbop.UpdateNotice(dao.DB, &model.Notice{
 		Title:       title,
 		Content:     content,
@@ -110,6 +97,9 @@ func (s *noticeserver) UpdateNotice(ctx context.Context, in *pb.NoticeRequest) (
 func (s *noticeserver) DeleteNotice(ctx context.Context, in *pb.NoticeRequest) (*pb.NoticeReply, error) {
 	id := in.GetId()
 	notice, err := dbop.ShowNotice(dao.DB, id)
+	if len(notice) == 0 {
+		return &pb.NoticeReply{Msg: "未找到公告"}, err
+	}
 	if err != nil {
 		return &pb.NoticeReply{Msg: err.Error()}, err
 	}

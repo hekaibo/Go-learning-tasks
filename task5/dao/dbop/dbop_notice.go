@@ -27,13 +27,7 @@ func ShowAllNotice(db *gorm.DB) ([]*model.Notice, error) {
 }
 
 // 更新公告
-// func UpdateNotice(db *gorm.DB, mapupdate map[string]interface{}, id uint64) error {
 func UpdateNotice(db *gorm.DB, notice *model.Notice, id uint64) error {
-	//result := db.Model(&model.User{}).Where("id=?", notice.Model.ID).Update(
-	//	"title", notice.Title,
-	//	"content", notice.Content,
-	//)
-	//result := db.Model(&model.Notice{}).Where("id = ?", id).Updates(mapupdate)
 	result := db.Model(&model.Notice{}).Where("id = ?", id).Updates(notice)
 	if result.Error != nil || result.RowsAffected == 0 {
 		return errors.New("更新公告失败,未找到公告")
