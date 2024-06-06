@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option go_package = ".;proto";
+
+service UserService {
+  rpc CreateUser (UserRequest) returns (UserReply) {}
+//  rpc GetUserByName (UserRequest) returns (UserDetailReply) {}
+//  rpc GetAllUser (UserRequest) returns (UserDetailReply) {}
+  rpc UpdateUserByName (UserRequest) returns (UserReply) {}
+  rpc DeleteUserByName (UserRequest) returns (UserReply) {}
+}
+
+message UserRequest {
+  uint64 id = 1;
+  string name = 2;
+  string email = 3;
+}
+
+message UserDetailReply {
+  repeated UserRequest UserDetail = 1;
+  string msg = 2;
+}
+
+message UserReply{
+  string msg = 1;
+}
+

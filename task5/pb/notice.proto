@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option go_package = ".;proto";
+
+service NoticeService {
+  rpc CreateNotice (NoticeRequest) returns (NoticeReply) {}
+  rpc ShowNotice (NoticeRequest) returns (NoticeDetailReply) {}
+  rpc ShowAllNotice (NoticeRequest) returns (NoticeDetailReply) {}
+  rpc UpdateNotice (NoticeRequest) returns (NoticeReply) {}
+  rpc DeleteNotice (NoticeRequest) returns (NoticeReply) {}
+}
+
+message NoticeRequest {
+  uint64 id = 1;
+  string title = 2;
+  string content = 3;
+  string pubuser = 4;
+}
+
+message NoticeModel{
+  uint64 id = 1;
+  string title = 2;
+  string content = 3;
+  string pubuser = 4;
+  string createtime = 5;
+  string updatetime = 6;
+}
+
+
+message NoticeDetailReply {
+  repeated NoticeModel NoticeDetail = 1;
+  string msg = 2;
+}
+
+message NoticeReply{
+  string msg = 1;
+}
+

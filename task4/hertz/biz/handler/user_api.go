@@ -34,7 +34,7 @@ func CreateUser(ctx context.Context, c *app.RequestContext) {
 		"msg": res.Msg,
 	})
 
-	//err := dbop.CreateUser(gorm.DB, &model.User{Name: name, Email: email})
+	//err := dbop.CreateUser(dao.DB, &model.User{Name: name, Email: email})
 	//if err != nil {
 	//	log.Fatalln(err)
 	//}
